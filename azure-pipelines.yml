@@ -14,8 +14,13 @@ stages:
           displayName: test
         - script: dotnet publish
           displayName: publish 
-        - script: dotnet publish artifact
-          displayName: artifact  
+        - task: DownloadBuildArtifacts@1
+          inputs:
+           buildType: 'current'
+           downloadType: 'single'
+           artifactName: 'ms learn'
+           downloadPath: '$(System.ArtifactsDirectory)'
+            
 
        
 
