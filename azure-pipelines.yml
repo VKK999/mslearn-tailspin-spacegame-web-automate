@@ -6,13 +6,13 @@ stages:
       - job: dotnetbuild
         displayName: dotnet-job
         steps:
-        - script: dotnetrestore
+        - script: dotnet restore
           displayName: restore
-        - script: dotnetbuild
+        - script: dotnet build
           displayName: build
-        - script: dotnettest
+        - script: dotnet test
           displayName: test
-        - script: dotnetpublish
+        - script: dotnet publish
           displayName: publish 
               
 
